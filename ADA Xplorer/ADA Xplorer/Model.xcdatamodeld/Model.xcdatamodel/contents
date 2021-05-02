@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20E232" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="LinkedinHunter" representedClassName="LinkedinHunter" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="MasterExplorer" representedClassName="MasterExplorer" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="SocialStalker" representedClassName="SocialStalker" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="SocialStalker" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="LinkedinHunter" positionX="-54" positionY="-9" width="128" height="44"/>
+        <element name="MasterExplorer" positionX="-18" positionY="27" width="128" height="44"/>
+    </elements>
+</model>

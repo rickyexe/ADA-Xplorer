@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B65CD99263ED7550010958F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B65CD97263ED7550010958F /* Model.xcdatamodeld */; };
+		7B65CDC9263EE5A70010958F /* MasterExplorer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B65CDC7263EE5A70010958F /* MasterExplorer+CoreDataClass.swift */; };
+		7B65CDCA263EE5A70010958F /* MasterExplorer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B65CDC8263EE5A70010958F /* MasterExplorer+CoreDataProperties.swift */; };
+		7B65CDD1263EF57A0010958F /* LinkedinHunter+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B65CDCD263EF57A0010958F /* LinkedinHunter+CoreDataClass.swift */; };
+		7B65CDD2263EF57A0010958F /* LinkedinHunter+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B65CDCE263EF57A0010958F /* LinkedinHunter+CoreDataProperties.swift */; };
+		7B65CDD3263EF57A0010958F /* SocialStalker+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B65CDCF263EF57A0010958F /* SocialStalker+CoreDataClass.swift */; };
+		7B65CDD4263EF57A0010958F /* SocialStalker+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B65CDD0263EF57A0010958F /* SocialStalker+CoreDataProperties.swift */; };
 		7B682758263BFFB70068BACF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B682757263BFFB70068BACF /* AppDelegate.swift */; };
 		7B68275A263BFFB70068BACF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B682759263BFFB70068BACF /* SceneDelegate.swift */; };
 		7B68275C263BFFB70068BACF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68275B263BFFB70068BACF /* ViewController.swift */; };
@@ -26,6 +33,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B65CD98263ED7550010958F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		7B65CDC7263EE5A70010958F /* MasterExplorer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MasterExplorer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7B65CDC8263EE5A70010958F /* MasterExplorer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MasterExplorer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7B65CDCD263EF57A0010958F /* LinkedinHunter+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinkedinHunter+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7B65CDCE263EF57A0010958F /* LinkedinHunter+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinkedinHunter+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7B65CDCF263EF57A0010958F /* SocialStalker+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SocialStalker+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7B65CDD0263EF57A0010958F /* SocialStalker+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SocialStalker+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7B682754263BFFB70068BACF /* ADA Xplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ADA Xplorer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B682757263BFFB70068BACF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B682759263BFFB70068BACF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +71,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B65CDC4263EDF8F0010958F /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				7B65CDCD263EF57A0010958F /* LinkedinHunter+CoreDataClass.swift */,
+				7B65CDCE263EF57A0010958F /* LinkedinHunter+CoreDataProperties.swift */,
+				7B65CDCF263EF57A0010958F /* SocialStalker+CoreDataClass.swift */,
+				7B65CDD0263EF57A0010958F /* SocialStalker+CoreDataProperties.swift */,
+				7B65CDC7263EE5A70010958F /* MasterExplorer+CoreDataClass.swift */,
+				7B65CDC8263EE5A70010958F /* MasterExplorer+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		7B68274B263BFFB70068BACF = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +103,7 @@
 		7B682756263BFFB70068BACF /* ADA Xplorer */ = {
 			isa = PBXGroup;
 			children = (
+				7B65CDC4263EDF8F0010958F /* CoreData */,
 				7BED87C5263DB2A400773FDE /* Controller */,
 				7BED87C4263DB29E00773FDE /* View */,
 				7BED87C3263DB29700773FDE /* Model */,
@@ -87,6 +115,7 @@
 				7B682765263BFFB80068BACF /* Info.plist */,
 				7BED87BE263DA06200773FDE /* explorers.json */,
 				7B68276F263BFFDF0068BACF /* ExplorerManager.swift */,
+				7B65CD97263ED7550010958F /* Model.xcdatamodeld */,
 			);
 			path = "ADA Xplorer";
 			sourceTree = "<group>";
@@ -193,16 +222,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BED87C8263DB31500773FDE /* ExplorerDetailViewController.swift in Sources */,
+				7B65CDD4263EF57A0010958F /* SocialStalker+CoreDataProperties.swift in Sources */,
+				7B65CDD3263EF57A0010958F /* SocialStalker+CoreDataClass.swift in Sources */,
+				7B65CDCA263EE5A70010958F /* MasterExplorer+CoreDataProperties.swift in Sources */,
 				7BDFB268263E9302001BDF76 /* AchievementTableViewCell.swift in Sources */,
 				7B68275C263BFFB70068BACF /* ViewController.swift in Sources */,
 				7B682776263C04080068BACF /* ExplorerTableViewCell.swift in Sources */,
+				7B65CDC9263EE5A70010958F /* MasterExplorer+CoreDataClass.swift in Sources */,
 				7B682773263C00C90068BACF /* ExplorerViewController.swift in Sources */,
 				7BDFB26B263E9CD2001BDF76 /* Achievement.swift in Sources */,
 				7B682758263BFFB70068BACF /* AppDelegate.swift in Sources */,
+				7B65CDD1263EF57A0010958F /* LinkedinHunter+CoreDataClass.swift in Sources */,
 				7B682770263BFFDF0068BACF /* ExplorerManager.swift in Sources */,
 				7B68276D263BFFCF0068BACF /* Explorer.swift in Sources */,
 				7B68275A263BFFB70068BACF /* SceneDelegate.swift in Sources */,
 				7BDFB26E263EA1E7001BDF76 /* AchievementCollectionViewCell.swift in Sources */,
+				7B65CDD2263EF57A0010958F /* LinkedinHunter+CoreDataProperties.swift in Sources */,
+				7B65CD99263ED7550010958F /* Model.xcdatamodeld in Sources */,
 				7BED87CB263DB7AD00773FDE /* AchievementViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +441,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7B65CD97263ED7550010958F /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7B65CD98263ED7550010958F /* Model.xcdatamodel */,
+			);
+			currentVersion = 7B65CD98263ED7550010958F /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7B68274C263BFFB70068BACF /* Project object */;
 }

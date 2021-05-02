@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ExplorerViewController: UIViewController {
   
@@ -14,9 +15,11 @@ class ExplorerViewController: UIViewController {
     @IBOutlet weak var explorerTable: UITableView!
     var explorers:[Explorer]!
     var indexCellSelected:IndexPath?
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationItem.title = "Explorers"
         explorerTable.dataSource = self
         explorerTable.delegate = self
@@ -101,6 +104,22 @@ class ExplorerViewController: UIViewController {
     }
     
     
+    func insertMaster(name : String ){
+        //insert to master model
+        let newMaster = MasterExplorer(context: self.context)
+        newMaster.name = name
+        
+        //save the data
+        do{
+            try self.context.save()
+        }catch{
+            print(error)
+        }
+
+        
+    }
+    
+    
     struct ExplorerData: Codable {
         let Name: String
         let Photo: String
@@ -148,6 +167,7 @@ extension ExplorerViewController: UITableViewDelegate {
 extension ExplorerViewController: DetailExplorerDelegate{
     func getExplorerData() -> Explorer? {
         if let indexExplorer = indexCellSelected as IndexPath?{
+            insertMaster(name: explorers[indexExplorer.row].Name)
             return explorers[indexExplorer.row]
         }else{
             return nil;

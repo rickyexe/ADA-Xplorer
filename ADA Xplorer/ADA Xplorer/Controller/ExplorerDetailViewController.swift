@@ -16,8 +16,8 @@ class ExplorerDetailViewController: UIViewController {
     @IBOutlet weak var explorerDescription: UILabel!
     @IBOutlet weak var explorerPicture: UIImageView!
     weak var detailExplorerDelegate : DetailExplorerDelegate?
-    
     var explorer:Explorer!
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,32 +28,46 @@ class ExplorerDetailViewController: UIViewController {
             explorerTeam.text = explorer.Team
             explorerExpertise.text = explorer.Expertise
             self.explorer = explorer
-            print(explorer)
         }
 
     }
     
     @IBAction func clickLinkedin(_ sender: Any) {
         if let url = URL(string: "https://www.linkedin.com") {
+            insertMediaAchievement(name: explorer.Name , type: "linkedin")
             UIApplication.shared.open(url)
         }
         
     }
     @IBAction func clickInstagram(_ sender: Any) {
         if let url = URL(string: "https://instagram.com") {
+            insertMediaAchievement(name:explorer.Name , type: "instagram")
             UIApplication.shared.open(url)
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func insertMediaAchievement(name: String, type : String){
+        
+        if type == "instagram" {
+            let newInstagram = SocialStalker(context: self.context)
+            newInstagram.name = name
+        }else{
+            let newLinkedin = LinkedinHunter(context: self.context)
+            newLinkedin.name = name
+        }
+    
+        do{
+            try self.context.save()
+        }catch{
+            print(error)
+        }
+    
     }
-    */
+    
+    func insertLinkedin(name : String){
+       
+    }
 
 }
 
