@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ExplorerDetailViewController: UIViewController {
     
@@ -17,6 +18,7 @@ class ExplorerDetailViewController: UIViewController {
     @IBOutlet weak var explorerPicture: UIImageView!
     weak var detailExplorerDelegate : DetailExplorerDelegate?
     var explorer:Explorer!
+    var result:Explorer!
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
@@ -34,40 +36,92 @@ class ExplorerDetailViewController: UIViewController {
     
     @IBAction func clickLinkedin(_ sender: Any) {
         if let url = URL(string: "https://www.linkedin.com") {
-            insertMediaAchievement(name: explorer.Name , type: "linkedin")
+//            insertMediaAchievement(name: explorer.Name , type: "linkedin")
             UIApplication.shared.open(url)
         }
         
     }
     @IBAction func clickInstagram(_ sender: Any) {
         if let url = URL(string: "https://instagram.com") {
-            insertMediaAchievement(name:explorer.Name , type: "instagram")
+//            insertMediaAchievement(name:explorer.Name , type: "instagram")
             UIApplication.shared.open(url)
         }
     }
     
     
-    func insertMediaAchievement(name: String, type : String){
-        
-        if type == "instagram" {
-            let newInstagram = SocialStalker(context: self.context)
-            newInstagram.name = name
-        }else{
-            let newLinkedin = LinkedinHunter(context: self.context)
-            newLinkedin.name = name
-        }
+//    func insertMediaAchievement(name: String, type : String){
+//
+//        if type == "instagram" {
+//
+//            let instagram = getInstagramAchievementStatus(name: name)
+//            if instagram == true {
+//                let newInstagram = SocialStalker(context: self.context)
+//                newInstagram.name = name
+//            }
+//
+//
+//        }else{
+//            let linkedin = getLinkedinAchievementStatus(name: name)
+//            if linkedin == true {
+//                let newLinkedin = LinkedinHunter(context: self.context)
+//                newLinkedin.name = name
+//            }
+//
+//        }
+//
+//        do{
+//            try self.context.save()
+//        }catch{
+//            print(error)
+//        }
+//
+//    }
+
+//    func getInstagramAchievementStatus(name: String) -> Bool{
+//
+//        let request = SocialStalker.fetchRequest() as NSFetchRequest<SocialStalker>
+//
+//        //set the filtering
+//        let predicate  = NSPredicate(format: "name CONTAINS '\(name)'")
+//        request.predicate = predicate
+//
+//        do{
+//
+//            let result = try context.fetch(request)
+//            if result.count == 0 {
+//                return true
+//            }else{
+//                return false
+//            }
+//
+//        } catch  {
+//            print("error retrieving achievement")
+//        }
+//
+//
+//    }
+//
+//    func getLinkedinAchievementStatus(name: String) -> Bool{
+//
+//        do{
+//            let request = LinkedinHunter.fetchRequest() as NSFetchRequest<LinkedinHunter>
+//            let predicate  = NSPredicate(format: "name CONTAINS '\(name)'")
+//            request.predicate = predicate
+//            let result = try context.fetch(request)
+//            if result.count == 0 {
+//                return true
+//            }else{
+//                return false
+//            }
+//
+//
+//        } catch  {
+//            print("error retrieving achievement")
+//        }
+//
+//
+//    }
     
-        do{
-            try self.context.save()
-        }catch{
-            print(error)
-        }
-    
-    }
-    
-    func insertLinkedin(name : String){
-       
-    }
 
 }
 

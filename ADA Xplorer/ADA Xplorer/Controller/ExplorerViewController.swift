@@ -126,7 +126,6 @@ class ExplorerViewController: UIViewController {
         let Expertise: String
         let Team : String
         let Shift: String
-
     }
     
     
