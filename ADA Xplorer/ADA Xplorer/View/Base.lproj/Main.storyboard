@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="141" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hzb-j4-rKB">
-                                <rect key="frame" x="0.0" y="148" width="390" height="613"/>
+                                <rect key="frame" x="0.0" y="190" width="390" height="571"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="testCell" rowHeight="151" id="Sod-3X-9WN" customClass="ExplorerTableViewCell" customModule="ADA_Xplorer" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="testCell" rowHeight="151" id="Sod-3X-9WN" customClass="ExplorerTableViewCell" customModule="ADA_Xplorer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="151"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sod-3X-9WN" id="fQE-qm-8m8">
@@ -96,7 +96,7 @@
                                 </prototypes>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WSH-eG-SMs">
-                                <rect key="frame" x="20" y="107" width="350" height="32"/>
+                                <rect key="frame" x="20" y="149" width="350" height="32"/>
                                 <segments>
                                     <segment title="IT"/>
                                     <segment title="Design"/>
@@ -106,23 +106,35 @@
                                     <action selector="changeType:" destination="BYZ-38-t0r" eventType="valueChanged" id="UeC-dp-jSM"/>
                                 </connections>
                             </segmentedControl>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Cari Explorer" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xWj-j9-22j">
+                                <rect key="frame" x="13" y="93" width="364" height="51"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES" textContentType="name"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hzb-j4-rKB" secondAttribute="trailing" id="0XK-Fc-PDi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xWj-j9-22j" secondAttribute="trailing" constant="13" id="1Hl-MJ-jSh"/>
+                            <constraint firstItem="WSH-eG-SMs" firstAttribute="top" secondItem="xWj-j9-22j" secondAttribute="bottom" constant="5" id="Irt-VS-iXf"/>
                             <constraint firstItem="hzb-j4-rKB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JMW-1V-lnb"/>
-                            <constraint firstItem="WSH-eG-SMs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="19" id="O8U-ND-Cad"/>
+                            <constraint firstItem="xWj-j9-22j" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="Mu2-Wk-lbV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hzb-j4-rKB" secondAttribute="bottom" id="OA5-80-stO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WSH-eG-SMs" secondAttribute="trailing" constant="20" id="p5o-8Y-kOY"/>
                             <constraint firstItem="hzb-j4-rKB" firstAttribute="top" secondItem="WSH-eG-SMs" secondAttribute="bottom" constant="10" id="sPS-nx-spJ"/>
                             <constraint firstItem="WSH-eG-SMs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="x3R-8Q-x9b"/>
+                            <constraint firstItem="xWj-j9-22j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="13" id="ytb-WS-YCr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="L80-vY-lH1"/>
                     <connections>
                         <outlet property="explorerSegmentedControl" destination="WSH-eG-SMs" id="txd-P5-npf"/>
                         <outlet property="explorerTable" destination="hzb-j4-rKB" id="nGf-pw-gyI"/>
+                        <outlet property="searchExplorerBar" destination="xWj-j9-22j" id="PmD-cs-z49"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -269,7 +281,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ApE-fU-3JD"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="sYl-CK-j4T" firstAttribute="leading" secondItem="ApE-fU-3JD" secondAttribute="leading" constant="26" id="1eo-u9-9Kr"/>
