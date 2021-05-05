@@ -64,7 +64,7 @@ class AchievementViewController: UIViewController {
         //handle master achievement and new comer achievement
         if let masterData = master {
             masterCount = masterData.count
-            if masterCount >= 112 {
+            if masterCount >= 111 {
                 masterPicture = "search"
             }else{
                 masterPicture = "lock"
@@ -103,7 +103,7 @@ class AchievementViewController: UIViewController {
         }
         
         //handle all knowing achievement
-        if linkedinCount >= 50 && instagramCount >= 50 && masterCount >= 112 {
+        if linkedinCount >= 50 && instagramCount >= 50 && masterCount >= 111 {
             allKnowingCount = 1
             allKnowingPicture = "king"
         }else{
@@ -118,8 +118,8 @@ class AchievementViewController: UIViewController {
         self.achievements = [
             Achievement(title: "Newcomer", progress: newcomerProgress, description: "See your first explorer detail", photo: newcomerPicture),
             Achievement(title: "Social Media Stalker", progress: "\(instagramCount)/50", description: "Access 50 explorer instagram", photo: instagramPicture),
-            Achievement(title: "Connect Hunter", progress: "\(linkedinCount)/50", description: "Access 50 explorer linkedin", photo: linkedinPicture),
-            Achievement(title: "Master of Explorer", progress: "\(masterCount)/112", description: "See all explorer detail", photo: masterPicture),
+            Achievement(title: "Connection Hunter", progress: "\(linkedinCount)/50", description: "Access 50 explorer linkedin", photo: linkedinPicture),
+            Achievement(title: "Master of Explorer", progress: "\(masterCount)/111", description: "See all explorer detail", photo: masterPicture),
             Achievement(title: "All Knowing", progress: "\(allKnowingCount)/1", description: "Finish all achievements", photo: allKnowingPicture),
             
         ]

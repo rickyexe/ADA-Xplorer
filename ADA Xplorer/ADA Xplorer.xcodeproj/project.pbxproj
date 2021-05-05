@@ -24,6 +24,7 @@
 		7B682770263BFFDF0068BACF /* ExplorerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68276F263BFFDF0068BACF /* ExplorerManager.swift */; };
 		7B682773263C00C90068BACF /* ExplorerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B682772263C00C90068BACF /* ExplorerViewController.swift */; };
 		7B682776263C04080068BACF /* ExplorerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B682775263C04080068BACF /* ExplorerTableViewCell.swift */; };
+		7BC22926264142EA0049D278 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC22925264142EA0049D278 /* PopUpViewController.swift */; };
 		7BDFB268263E9302001BDF76 /* AchievementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDFB267263E9302001BDF76 /* AchievementTableViewCell.swift */; };
 		7BDFB26B263E9CD2001BDF76 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDFB26A263E9CD2001BDF76 /* Achievement.swift */; };
 		7BDFB26E263EA1E7001BDF76 /* AchievementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDFB26D263EA1E7001BDF76 /* AchievementCollectionViewCell.swift */; };
@@ -52,6 +53,7 @@
 		7B68276F263BFFDF0068BACF /* ExplorerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorerManager.swift; sourceTree = "<group>"; };
 		7B682772263C00C90068BACF /* ExplorerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorerViewController.swift; sourceTree = "<group>"; };
 		7B682775263C04080068BACF /* ExplorerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorerTableViewCell.swift; sourceTree = "<group>"; };
+		7BC22925264142EA0049D278 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		7BDFB267263E9302001BDF76 /* AchievementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementTableViewCell.swift; sourceTree = "<group>"; };
 		7BDFB26A263E9CD2001BDF76 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		7BDFB26D263EA1E7001BDF76 /* AchievementCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -111,7 +113,6 @@
 				7B682759263BFFB70068BACF /* SceneDelegate.swift */,
 				7B68275B263BFFB70068BACF /* ViewController.swift */,
 				7B682760263BFFB80068BACF /* Assets.xcassets */,
-				7B682762263BFFB80068BACF /* LaunchScreen.storyboard */,
 				7B682765263BFFB80068BACF /* Info.plist */,
 				7BED87BE263DA06200773FDE /* explorers.json */,
 				7B68276F263BFFDF0068BACF /* ExplorerManager.swift */,
@@ -132,6 +133,7 @@
 		7BED87C4263DB29E00773FDE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7B682762263BFFB80068BACF /* LaunchScreen.storyboard */,
 				7B68275D263BFFB70068BACF /* Main.storyboard */,
 				7B682775263C04080068BACF /* ExplorerTableViewCell.swift */,
 				7BDFB267263E9302001BDF76 /* AchievementTableViewCell.swift */,
@@ -146,6 +148,7 @@
 				7B682772263C00C90068BACF /* ExplorerViewController.swift */,
 				7BED87C7263DB31500773FDE /* ExplorerDetailViewController.swift */,
 				7BED87CA263DB7AD00773FDE /* AchievementViewController.swift */,
+				7BC22925264142EA0049D278 /* PopUpViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				7B682770263BFFDF0068BACF /* ExplorerManager.swift in Sources */,
 				7B68276D263BFFCF0068BACF /* Explorer.swift in Sources */,
 				7B68275A263BFFB70068BACF /* SceneDelegate.swift in Sources */,
+				7BC22926264142EA0049D278 /* PopUpViewController.swift in Sources */,
 				7BDFB26E263EA1E7001BDF76 /* AchievementCollectionViewCell.swift in Sources */,
 				7B65CDD2263EF57A0010958F /* LinkedinHunter+CoreDataProperties.swift in Sources */,
 				7B65CD99263ED7550010958F /* Model.xcdatamodeld in Sources */,

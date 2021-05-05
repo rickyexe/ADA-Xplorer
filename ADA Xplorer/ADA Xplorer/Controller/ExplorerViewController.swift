@@ -94,6 +94,7 @@ class ExplorerViewController: UIViewController {
             let decodedData = try JSONDecoder().decode([ExplorerData].self,
                                                        from: jsonData)
             
+            
             if searchActive == true {
                 if filtered != nil{
                     filtered.removeAll()
@@ -252,11 +253,9 @@ extension ExplorerViewController: DetailExplorerDelegate{
             
             if searchActive == true {
                 insertMaster(name: filtered[indexExplorer.row].Name)
-                
                 return filtered[indexExplorer.row]
             }else{
                 insertMaster(name: explorers[indexExplorer.row].Name)
-                
                 return explorers[indexExplorer.row]
             }
             

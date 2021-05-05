@@ -20,6 +20,22 @@ class ExplorerDetailViewController: UIViewController {
     var explorer:Explorer!
     var result:Explorer!
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var achTitle: String = ""
+    var achDesc: String = ""
+    var achFoto : String = ""
+    
+    //for achievement count
+    var master:[MasterExplorer]?
+    var instagram:[SocialStalker]?
+    var linkedin : [LinkedinHunter]?
+    var statusAchievement : Bool = false
+    
+    //for achievement progress
+    var masterCount : Int = 0
+    var instagramCount : Int = 0
+    var linkedinCount : Int = 0
+    var newComerCount : Int = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,21 +45,27 @@ class ExplorerDetailViewController: UIViewController {
             explorerShift.text = explorer.Shift
             explorerTeam.text = explorer.Team
             explorerExpertise.text = explorer.Expertise
+            explorerDescription.text = "Hello my name is \(explorer.Name). Check out my social media and let's get to know each other"
             self.explorer = explorer
         }
+        checkAchievementCompletion(tipe: "newcomer")
+        checkAchievementCompletion(tipe: "allknowing")
+        checkAchievementCompletion(tipe: "master")
 
     }
     
     @IBAction func clickLinkedin(_ sender: Any) {
-        if let url = URL(string: "https://www.linkedin.com") {
+        if let url = URL(string: "https://www.linkedin.com/company/apple-developer-academy-uc/mycompany/") {
             insertMediaAchievement(name: explorer.Name , type: "linkedin")
+            checkAchievementCompletion(tipe: "linkedin")
             UIApplication.shared.open(url)
         }
         
     }
     @IBAction func clickInstagram(_ sender: Any) {
-        if let url = URL(string: "https://instagram.com") {
+        if let url = URL(string: "https://instagram.com/uc_appledeveloperacademy") {
             insertMediaAchievement(name:explorer.Name , type: "instagram")
+            checkAchievementCompletion(tipe: "instagram")
             UIApplication.shared.open(url)
         }
     }
@@ -125,6 +147,159 @@ class ExplorerDetailViewController: UIViewController {
         return false;
         
 
+    }
+    
+    
+    
+    public func checkAchievementCompletion(tipe: String){
+        
+        statusAchievement = false
+        
+        
+        do{
+            self.master =  try context.fetch(MasterExplorer.fetchRequest())
+            self.instagram = try context.fetch(SocialStalker.fetchRequest())
+            self.linkedin = try context.fetch(LinkedinHunter.fetchRequest())
+            
+        }catch{
+         print("error retrieving achievement data")
+        }
+        
+        
+        // get all value
+        if let linkedinData = linkedin {
+            linkedinCount = linkedinData.count
+        }
+        
+        if let instagramData = instagram {
+            instagramCount = instagramData.count
+        }
+        
+        if let newComerData = master {
+            newComerCount = newComerData.count
+        }
+        
+        if let masterData = master {
+            masterCount = masterData.count 
+        }
+        
+        
+        
+        
+        if tipe == "linkedin" {
+            
+            if linkedinCount == 50 {
+                if readFromUserDefault(tipe: "linkedin") == false {
+                    statusAchievement = true;
+                }
+            }
+
+            
+        }else if tipe == "instagram"{
+            
+            if instagramCount == 50 {
+                if readFromUserDefault(tipe: "instagram") == false {
+                    statusAchievement = true;
+                }
+            }
+      
+         
+        }else if tipe == "newcomer"{
+            
+            if newComerCount == 1 {
+                if readFromUserDefault(tipe: "newcomer") == false {
+                    statusAchievement = true;
+                }
+            }
+           
+        }else if tipe == "master"{
+            
+            if masterCount == 111 {
+                if readFromUserDefault(tipe: "master") == false {
+                    statusAchievement = true;
+                }
+            }
+            
+        }else if tipe == "allknowing"{
+            
+            
+            if readFromUserDefault(tipe: "linkedin") && readFromUserDefault(tipe: "instagram") && readFromUserDefault(tipe: "master")
+            {
+                statusAchievement = true
+                let preferences = UserDefaults.standard
+                preferences.removeObject(forKey: "linkedin")
+                preferences.removeObject(forKey: "instagram")
+                preferences.removeObject(forKey: "master")
+                preferences.synchronize()
+               
+            }
+            
+
+        }
+        
+        
+        
+        if statusAchievement == true {
+            
+            if tipe == "linkedin" {
+                achTitle = "Connection Hunter"
+                achDesc = "Access 50 explorer linkedin"
+                achFoto = "linkedin"
+                saveToUserDefault(tipe: tipe)
+                
+            }else if tipe == "instagram"{
+                achTitle = "Social Media Stalker"
+                achDesc = "Access 50 explorer instagram"
+                achFoto = "instagram"
+                saveToUserDefault(tipe: tipe)
+                
+            }else if tipe == "newcomer"{
+                achTitle = "Newcomer"
+                achDesc = "See your first explorer detail"
+                achFoto = "baby"
+                saveToUserDefault(tipe: tipe)
+                
+            }else if tipe == "allknowing"{
+                
+                    achTitle = "All Knowing"
+                    achDesc = "Finish all achievements"
+                    achFoto = "king"
+                saveToUserDefault(tipe: tipe)
+                
+            }else if tipe == "master"{
+                achTitle = "Master of Explorer"
+                achDesc = "See all explorer detail"
+                achFoto = "search"
+                saveToUserDefault(tipe: tipe)
+            }
+            
+            
+            if let PopViewController = self.storyboard?.instantiateViewController(identifier: "AchievementPopUp") as? PopUpViewController{
+                PopViewController.achievement = Achievement(title: achTitle, progress: "1", description: achDesc, photo: achFoto)
+                self.navigationController?.present(PopViewController, animated: true)
+        
+            }
+        }
+        
+   
+        
+        
+    }
+    
+    
+    func saveToUserDefault(tipe : String){
+        let preferences = UserDefaults.standard
+        preferences.setValue(tipe, forKey: tipe)
+        preferences.synchronize()
+    }
+    
+    func readFromUserDefault(tipe: String) -> Bool{
+        let preferences = UserDefaults.standard
+        if preferences.object(forKey: tipe) == nil {
+            return false
+        } else {
+           return true
+        }
     }
     
 
