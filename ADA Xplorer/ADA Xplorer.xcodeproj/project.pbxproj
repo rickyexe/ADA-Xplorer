@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B34707F26429A080083C71F /* achievement.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7B34707E26429A080083C71F /* achievement.wav */; };
 		7B65CD99263ED7550010958F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B65CD97263ED7550010958F /* Model.xcdatamodeld */; };
 		7B65CDC9263EE5A70010958F /* MasterExplorer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B65CDC7263EE5A70010958F /* MasterExplorer+CoreDataClass.swift */; };
 		7B65CDCA263EE5A70010958F /* MasterExplorer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B65CDC8263EE5A70010958F /* MasterExplorer+CoreDataProperties.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B34707E26429A080083C71F /* achievement.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = achievement.wav; sourceTree = "<group>"; };
 		7B65CD98263ED7550010958F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7B65CDC7263EE5A70010958F /* MasterExplorer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MasterExplorer+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7B65CDC8263EE5A70010958F /* MasterExplorer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MasterExplorer+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B34707D264299D70083C71F /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				7B34707E26429A080083C71F /* achievement.wav */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		7B65CDC4263EDF8F0010958F /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +115,7 @@
 		7B682756263BFFB70068BACF /* ADA Xplorer */ = {
 			isa = PBXGroup;
 			children = (
+				7B34707D264299D70083C71F /* Sound */,
 				7B65CDC4263EDF8F0010958F /* CoreData */,
 				7BED87C5263DB2A400773FDE /* Controller */,
 				7BED87C4263DB29E00773FDE /* View */,
@@ -211,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B682764263BFFB80068BACF /* LaunchScreen.storyboard in Resources */,
+				7B34707F26429A080083C71F /* achievement.wav in Resources */,
 				7B682761263BFFB80068BACF /* Assets.xcassets in Resources */,
 				7BED87BF263DA06200773FDE /* explorers.json in Resources */,
 				7B68275F263BFFB70068BACF /* Main.storyboard in Resources */,

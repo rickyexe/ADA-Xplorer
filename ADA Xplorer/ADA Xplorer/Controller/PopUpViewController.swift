@@ -6,12 +6,17 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PopUpViewController: UIViewController {
 
     @IBOutlet weak var achievementDescription: UILabel!
     @IBOutlet weak var achievementTitle: UILabel!
     @IBOutlet weak var achievementImage: UIImageView!
+    
+    
+    //sound
+    var audioPlayer: AVAudioPlayer?
     
     
     
@@ -22,12 +27,27 @@ class PopUpViewController: UIViewController {
         achievementDescription.text = achievement.description
         achievementTitle.text = achievement.title
         achievementImage.image = UIImage(named: achievement.photo)
+        playAchievementSound()
+        
         
         // Do any additional setup after loading the view.
     }
     
     @IBAction func closeModal(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func playAchievementSound(){
+        let pathToSound = Bundle.main.path(forResource: "achievement", ofType: "wav")!
+        let url = URL(fileURLWithPath: pathToSound)
+        
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.play()
+        }catch{
+            
+        }
     }
     
     /*
