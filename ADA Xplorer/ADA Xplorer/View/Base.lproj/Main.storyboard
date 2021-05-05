@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LCM-79-sYR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GzX-Yl-mip">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -144,7 +144,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Tos-Db-RPL">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="LCM-79-sYR" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="explorerPage" automaticallyAdjustsScrollViewInsets="NO" id="LCM-79-sYR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rwb-uY-ke6">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -524,12 +524,63 @@
             </objects>
             <point key="canvasLocation" x="1353.8461538461538" y="65.402843601895725"/>
         </scene>
+        <!--FaceID View Controller-->
+        <scene sceneID="ii7-Lu-k3A">
+            <objects>
+                <viewController id="GzX-Yl-mip" customClass="FaceIDViewController" customModule="ADA_Xplorer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TTU-CI-AZO">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ar-Er-s8h">
+                                <rect key="frame" x="105" y="391.66666666666669" width="180" height="61"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.50980392159999999" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="HYA-um-Sv3"/>
+                                    <constraint firstAttribute="height" constant="61" id="c8a-WL-dEh"/>
+                                </constraints>
+                                <state key="normal" title="Authenticate">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tryAgain:" destination="GzX-Yl-mip" eventType="touchUpInside" id="FIe-sc-NM1"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_uc" translatesAutoresizingMaskIntoConstraints="NO" id="n03-zr-fHE">
+                                <rect key="frame" x="75" y="167" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="hUs-jw-yqT"/>
+                                    <constraint firstAttribute="height" constant="128" id="slx-lj-n1v"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3Ek-0C-d4d"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="n03-zr-fHE" firstAttribute="leading" secondItem="3Ek-0C-d4d" secondAttribute="leading" constant="75" id="IGn-dL-XRo"/>
+                            <constraint firstItem="2Ar-Er-s8h" firstAttribute="centerY" secondItem="TTU-CI-AZO" secondAttribute="centerY" id="d24-rS-aNn"/>
+                            <constraint firstItem="n03-zr-fHE" firstAttribute="top" secondItem="3Ek-0C-d4d" secondAttribute="top" constant="123" id="leJ-qu-A1F"/>
+                            <constraint firstItem="2Ar-Er-s8h" firstAttribute="centerX" secondItem="TTU-CI-AZO" secondAttribute="centerX" id="otK-is-jcB"/>
+                            <constraint firstItem="3Ek-0C-d4d" firstAttribute="trailing" secondItem="n03-zr-fHE" secondAttribute="trailing" constant="75" id="tvT-yx-5WD"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hgh-pw-G1i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1183.0769230769231" y="17.772511848341232"/>
+        </scene>
     </scenes>
     <resources>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="instagram" width="1000" height="1000"/>
         <image name="king" width="512" height="512"/>
         <image name="linkedin" width="512" height="512"/>
+        <image name="logo_uc" width="2416" height="1570"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="profile" width="800" height="800"/>

@@ -40,8 +40,9 @@ class AchievementViewController: UIViewController {
         fetchAllAchievement()
     }
     
+
     
-   public func fetchAllAchievement(){
+    func fetchAllAchievement(){
         
         //Fetch the data from Core Data to process
         do{
