@@ -632,7 +632,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="hello world" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XHS-3z-UBk">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XHS-3z-UBk">
                                                 <rect key="frame" x="26" y="569" width="338" height="128"/>
                                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <constraints>
