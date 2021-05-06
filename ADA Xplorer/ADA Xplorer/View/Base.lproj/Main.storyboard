@@ -731,6 +731,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UXi-m4-ojA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2184.6153846153848" y="858.76777251184831"/>
+        </scene>
 
         <!--FaceID View Controller-->
         <scene sceneID="ii7-Lu-k3A">
