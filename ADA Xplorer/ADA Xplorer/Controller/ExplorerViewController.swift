@@ -37,11 +37,6 @@ class ExplorerViewController: UIViewController {
     }
     
     
-    
-    
-    
-    
-    
     //segmented control handle
     @IBAction func changeType(_ sender: Any) {
         
@@ -104,8 +99,6 @@ class ExplorerViewController: UIViewController {
                     explorers.removeAll()
                 }
             }
-         
-            
           
          
             
@@ -289,17 +282,10 @@ extension ExplorerViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchActive = false
         self.searchExplorerBar.endEditing(true)
-//        self.explorerTable.reloadData()
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        
-        //ideas is to filter the current explorer data
-        
-//        if searchText == "" {
-//            filtered = explorers
-//        }else{
+    
         
         if searchActive == true {
             filtered = filtered.filter({$0.Name.lowercased().contains(searchText.lowercased())})
@@ -307,7 +293,7 @@ extension ExplorerViewController: UISearchBarDelegate {
             filtered = explorers.filter({$0.Name.lowercased().contains(searchText.lowercased())})
         }
             
-//        }
+
         
         if filtered.count == 0 {
             searchActive = false
@@ -317,18 +303,6 @@ extension ExplorerViewController: UISearchBarDelegate {
         
         
 
-//        filtered = explorers.filter({ (text) -> Bool in
-//            let tmp: NSString = text
-//            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
-//            return range.location != NSNotFound
-//        })
-        
-//        if(filtered.count == 0){
-//            searchActive = false;
-//        } else {
-//            searchActive = true;
-//        }
-//
         self.explorerTable.reloadData()
     }
 }

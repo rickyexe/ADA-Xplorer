@@ -10,12 +10,21 @@ import CoreData
 
 class ExplorerDetailViewController: UIViewController {
     
-    @IBOutlet weak var explorerShift: UILabel!
+
+    
     @IBOutlet weak var explorerTeam: UILabel!
+    
+    @IBOutlet weak var explorerDescription: UILabel!
+    
+    @IBOutlet weak var explorerPicture: UIImageView!
+    
+    @IBOutlet weak var explorerShift: UILabel!
     @IBOutlet weak var explorerExpertise: UILabel!
     @IBOutlet weak var explorerName: UILabel!
-    @IBOutlet weak var explorerDescription: UILabel!
-    @IBOutlet weak var explorerPicture: UIImageView!
+    @IBOutlet weak var personalNotesExplorer: UITextView!
+    
+    
+    
     weak var detailExplorerDelegate : DetailExplorerDelegate?
     var explorer:Explorer!
     var result:Explorer!
@@ -48,21 +57,23 @@ class ExplorerDetailViewController: UIViewController {
             explorerDescription.text = "Hello my name is \(explorer.Name). Check out my social media and let's get to know each other"
             self.explorer = explorer
         }
+        navigationItem.title = "Explorer Detail"
         explorerPicture.layer.cornerRadius = 20
         checkAchievementCompletion(tipe: "newcomer")
         checkAchievementCompletion(tipe: "allknowing")
         checkAchievementCompletion(tipe: "master")
-
-    }
+        
+        
     
-    @IBAction func clickLinkedin(_ sender: Any) {
-        if let url = URL(string: "https://www.linkedin.com/company/apple-developer-academy-uc/mycompany/") {
-            insertMediaAchievement(name: explorer.Name , type: "linkedin")
-            checkAchievementCompletion(tipe: "linkedin")
-            UIApplication.shared.open(url)
-        }
+    }
+
+    
+    @IBAction func saveNotes(_ sender: Any) {
+        
+        
         
     }
+    
     @IBAction func clickInstagram(_ sender: Any) {
         if let url = URL(string: "https://instagram.com/uc_appledeveloperacademy") {
             insertMediaAchievement(name:explorer.Name , type: "instagram")
@@ -71,6 +82,14 @@ class ExplorerDetailViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func clickLinkedin(_ sender: Any) {
+        if let url = URL(string: "https://www.linkedin.com/company/apple-developer-academy-uc/mycompany/") {
+            insertMediaAchievement(name: explorer.Name , type: "linkedin")
+            checkAchievementCompletion(tipe: "linkedin")
+            UIApplication.shared.open(url)
+        }
+    }
     
     func insertMediaAchievement(name: String, type : String){
 
