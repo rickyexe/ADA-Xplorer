@@ -48,6 +48,7 @@ class ExplorerDetailViewController: UIViewController {
             explorerDescription.text = "Hello my name is \(explorer.Name). Check out my social media and let's get to know each other"
             self.explorer = explorer
         }
+        explorerPicture.layer.cornerRadius = 20
         checkAchievementCompletion(tipe: "newcomer")
         checkAchievementCompletion(tipe: "allknowing")
         checkAchievementCompletion(tipe: "master")
