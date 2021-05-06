@@ -10,6 +10,7 @@
 		7B34707F26429A080083C71F /* achievement.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7B34707E26429A080083C71F /* achievement.wav */; };
 		7B3C190C2643DA78005F9AEB /* ExplorerNotes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C190A2643DA78005F9AEB /* ExplorerNotes+CoreDataClass.swift */; };
 		7B3C190D2643DA78005F9AEB /* ExplorerNotes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C190B2643DA78005F9AEB /* ExplorerNotes+CoreDataProperties.swift */; };
+		7B3470832642A1110083C71F /* FaceIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3470822642A1110083C71F /* FaceIDViewController.swift */; };
 		7B65CD99263ED7550010958F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B65CD97263ED7550010958F /* Model.xcdatamodeld */; };
 		7B65CDC9263EE5A70010958F /* MasterExplorer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B65CDC7263EE5A70010958F /* MasterExplorer+CoreDataClass.swift */; };
 		7B65CDCA263EE5A70010958F /* MasterExplorer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B65CDC8263EE5A70010958F /* MasterExplorer+CoreDataProperties.swift */; };
@@ -40,6 +41,7 @@
 		7B34707E26429A080083C71F /* achievement.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = achievement.wav; sourceTree = "<group>"; };
 		7B3C190A2643DA78005F9AEB /* ExplorerNotes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExplorerNotes+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7B3C190B2643DA78005F9AEB /* ExplorerNotes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExplorerNotes+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7B3470822642A1110083C71F /* FaceIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIDViewController.swift; sourceTree = "<group>"; };
 		7B65CD98263ED7550010958F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7B65CDC7263EE5A70010958F /* MasterExplorer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MasterExplorer+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7B65CDC8263EE5A70010958F /* MasterExplorer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MasterExplorer+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				7BED87C7263DB31500773FDE /* ExplorerDetailViewController.swift */,
 				7BED87CA263DB7AD00773FDE /* AchievementViewController.swift */,
 				7BC22925264142EA0049D278 /* PopUpViewController.swift */,
+				7B3470822642A1110083C71F /* FaceIDViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				7B65CDD2263EF57A0010958F /* LinkedinHunter+CoreDataProperties.swift in Sources */,
 				7B65CD99263ED7550010958F /* Model.xcdatamodeld in Sources */,
 				7B3C190C2643DA78005F9AEB /* ExplorerNotes+CoreDataClass.swift in Sources */,
+				7B3470832642A1110083C71F /* FaceIDViewController.swift in Sources */,
 				7BED87CB263DB7AD00773FDE /* AchievementViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
